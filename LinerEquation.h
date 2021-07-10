@@ -73,8 +73,8 @@ LinerEquation::LinerEquation(const int& len) :Matrix(len, len), rVector{ new dou
 }
 
 LinerEquation::LinerEquation(const LinerEquation& cpyLinerEquation) : Matrix(cpyLinerEquation),
-rVector{ new double[cpyLinerEquation.len] },
-len(cpyLinerEquation.len)
+																	rVector{ new double[cpyLinerEquation.len] },
+																	len(cpyLinerEquation.len)
 {
 	for (int i = 0; i < len; ++i)
 	{
@@ -91,7 +91,7 @@ len(cpyLinerEquation.len)
 }
 
 LinerEquation::LinerEquation(LinerEquation&& cpyLinerEquation) : Matrix(std::move(cpyLinerEquation)),
-len(cpyLinerEquation.len)
+																len(cpyLinerEquation.len)
 {
 	rVector = cpyLinerEquation.rVector;
 	ans = cpyLinerEquation.ans;
@@ -100,8 +100,8 @@ len(cpyLinerEquation.len)
 }
 
 LinerEquation::LinerEquation(double** coefficients, const double* rVector, const int& len) : Matrix(len, len),
-rVector(new double[len]),
-len(len)
+																							rVector(new double[len]),
+																							len(len)
 {
 	for (int i = 0; i < len; ++i)
 	{

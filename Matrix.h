@@ -112,6 +112,8 @@ public:
 		return tempMatrix;
 	}
 
+	auto operator ()(const int& row,const int& column) -> double
+
 	auto operator =( const Matrix& rhs ) = delete;
 	auto operator =( Matrix&& rhs ) = delete;
 };
@@ -148,7 +150,6 @@ inline Matrix::Matrix(const int& row, const int& column) : row(row), column(colu
 
 inline Matrix::Matrix(const Matrix& cpyMatrix) : row(cpyMatrix.row), column(cpyMatrix.column)
 {
-	std::cout << "COPY\n";
 	this->a = new double* [row];
 	for (int i = 0; i < row; ++i)
 	{
@@ -162,7 +163,6 @@ inline Matrix::Matrix(const Matrix& cpyMatrix) : row(cpyMatrix.row), column(cpyM
 
 inline Matrix::Matrix(Matrix&& cpyMatrix) noexcept : row(cpyMatrix.row), column(cpyMatrix.column)
 {
-	std::cout << "MOVE\n";
 	this->a = cpyMatrix.a;
 	cpyMatrix.a = nullptr;
 }
@@ -232,5 +232,9 @@ inline auto Matrix::getTransposition() const -> Matrix
 	return tempMatrix;
 }
 
+auto operator ()(const int& row,const int& column) -> double
+{
+	return a[row][column];
+}
 
 #endif
