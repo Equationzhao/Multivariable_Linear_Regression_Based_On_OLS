@@ -86,4 +86,6 @@ auto main() -> int
 	}
 	delete[]x;
 	delete[]y;
+
+	system("pause");
 }

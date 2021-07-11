@@ -30,7 +30,7 @@ public:
 	*	构造函数
 	*	形参:	p1:方阵阶数
 	*/
-	explicit Square(const int& len) ;
+	Square(const int& len) ;
 
 	/*
 	*	构造函数
@@ -42,13 +42,13 @@ public:
 	*	拷贝构造函数
 	*	形参:	p1:方阵对象（左值）
 	*/
-	explicit Square(const Square& cpySquare);
+	Square(const Square& cpySquare);
 
 	/*
 	*	移动构造函数
 	*	形参:	p1:方阵对象（右值）
 	*/
-	explicit Square(Square&& cpySquare) noexcept;
+	Square(Square&& cpySquare) noexcept;
 
 	~Square() = default;
 
@@ -191,15 +191,15 @@ auto Square::getTransposition(double** arr)const -> void
 	}
 }
 
-explicit Square::Square(const int& len) : Matrix(len, len)
+Square::Square(const int& len) : Matrix(len, len)
 {
 }
 
-explicit Square::Square(const Square& cpySquare) : Matrix(cpySquare)
+Square::Square(const Square& cpySquare) : Matrix(cpySquare)
 {
 }
 
-explicit Square::Square(Square&& cpySquare)noexcept : Matrix(std::move(cpySquare))
+Square::Square(Square&& cpySquare)noexcept : Matrix(std::move(cpySquare))
 {
 }
 
