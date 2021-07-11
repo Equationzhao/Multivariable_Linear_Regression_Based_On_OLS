@@ -19,9 +19,9 @@ protected:
 public:
 	Matrix(const int& row, const int& column);
 
-	Matrix(const Matrix& cpyMatrix);
+	explicit Matrix(const Matrix& cpyMatrix);
 
-	Matrix(Matrix&& cpyMatrix) noexcept;
+	explicit Matrix(Matrix&& cpyMatrix) noexcept;
 
 	Matrix() = delete;
 
