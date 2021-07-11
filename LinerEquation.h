@@ -17,19 +17,19 @@ public:
 	*	构造函数：
 		形参：p1:参数线性方程阶数
 	*/
-	LinerEquation(const int& len);
+	explicit LinerEquation(const int& len);
 	
 	/*
 	*	拷贝构造函数：
 		形参：p1:线性方程对象（左值）
 	*/
-	LinerEquation(const LinerEquation& cpyLinerEquation);
+	explicit LinerEquation(const LinerEquation& cpyLinerEquation);
 	
 	/*
 	*	拷贝构造函数：
 		形参：p1:线性方程对象（右值）
 	*/
-	LinerEquation(LinerEquation&& cpyLinerEquation);
+	explicit LinerEquation(LinerEquation&& cpyLinerEquation);
 
 	/*
 	*	构造函数：
@@ -68,11 +68,11 @@ public:
 
 };
 
-LinerEquation::LinerEquation(const int& len) :Matrix(len, len), rVector{ new double[len] }, len(len)
+explicit LinerEquation::LinerEquation(const int& len) :Matrix(len, len), rVector{ new double[len] }, len(len)
 {
 }
 
-LinerEquation::LinerEquation(const LinerEquation& cpyLinerEquation) : Matrix(cpyLinerEquation),
+explicit LinerEquation::LinerEquation(const LinerEquation& cpyLinerEquation) : Matrix(cpyLinerEquation),
 																	rVector{ new double[cpyLinerEquation.len] },
 																	len(cpyLinerEquation.len)
 {
@@ -90,7 +90,7 @@ LinerEquation::LinerEquation(const LinerEquation& cpyLinerEquation) : Matrix(cpy
 	}
 }
 
-LinerEquation::LinerEquation(LinerEquation&& cpyLinerEquation) : Matrix(std::move(cpyLinerEquation)),
+explicit LinerEquation::LinerEquation(LinerEquation&& cpyLinerEquation) : Matrix(std::move(cpyLinerEquation)),
 																len(cpyLinerEquation.len)
 {
 	rVector = cpyLinerEquation.rVector;
