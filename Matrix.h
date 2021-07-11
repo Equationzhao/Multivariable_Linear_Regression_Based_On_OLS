@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <cmath>
 
 #ifndef _MATRIX_
 #define _MATRIX_
@@ -112,7 +113,7 @@ public:
 		return tempMatrix;
 	}
 
-	auto operator ()(const int& row,const int& column) -> double
+	auto operator ()(const int& row,const int& column) -> double;
 
 	auto operator =( const Matrix& rhs ) = delete;
 	auto operator =( Matrix&& rhs ) = delete;
@@ -232,7 +233,7 @@ inline auto Matrix::getTransposition() const -> Matrix
 	return tempMatrix;
 }
 
-auto operator ()(const int& row,const int& column) -> double
+auto  Matrix::operator ()(const int& row,const int& column) -> double
 {
 	return a[row][column];
 }

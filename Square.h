@@ -50,7 +50,7 @@ public:
 	*/
 	Square(Square&& cpySquare) noexcept;
 
-	~Square(){} = default;
+	~Square() = default;
 
 	Square() = delete;
 	auto getRow() const -> int = delete;
