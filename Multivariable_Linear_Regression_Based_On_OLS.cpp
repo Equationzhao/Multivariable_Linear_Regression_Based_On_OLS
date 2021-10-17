@@ -45,11 +45,6 @@ auto printAns(const OLS_MLR& mlr )
 	}
 }
 
-Square getSq()
-{
-	return Square(2);
-}
-
 auto main() -> int
 {
 	
